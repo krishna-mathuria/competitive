@@ -2,7 +2,6 @@
 #define ll long long
 using namespace std;
 
-
 int main()
 {
     long long n, k, x, ans = 0;
