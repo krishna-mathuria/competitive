@@ -32,5 +32,6 @@ int main()
   x=2*x-1;
   for(i=l; i<=r; i++)  ans+=is_one(x,i,n);
   cout<<ans<<endl;  
+  
   return 0;
 }
