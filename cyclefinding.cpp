@@ -32,6 +32,7 @@ void solve() {
 			}
 		}
 	}
+
 	for (int u = 1; u <= n; u++) {
 		for (auto [v, w] : adj[u]) {
 			if (dist[v] > dist[u] + w) {
