@@ -13,7 +13,6 @@ void constructTree(int node, int l, int r, vector<int> &tree, vector<vector<int>
 }
 
 int getMax(int node, int qs, int qe, int ss, int se, vector<int> &tree, vector<vector<int>> &nums){
-    cout<<qs<<" "<<qe<<" "<<ss<<" "<<se<<endl;
     if(nums[se][0] < qs || qe < nums[ss][0]){
         return 0;
     if(qs <= nums[ss][0] && nums[se][0] <= qe)
