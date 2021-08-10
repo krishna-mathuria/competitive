@@ -1,6 +1,5 @@
 vector<int> leftView(Node *root)
 {
-   // Your code here
    vector<int> ans;
     if (!root)
         return ans;

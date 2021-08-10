@@ -1,8 +1,7 @@
 class Solution
 {
     public:
-    //Function to return a list of nodes visible from the top view 
-    //from left to right in Binary Tree.
+
     vector<int> topView(Node *root)
     {
         vector<int> ans;
