@@ -1,40 +1,30 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
- 
-void solver(vector<string> my_list)
-{
 
-    map<map<char, int>, vector<string>> my_map;
-     
-    // Loop over all words
-    for(string str : my_list)
-    {
-
-        map<char, int> temp_map;
-        vector<string> temp_my_list;
-        for(int i = 0; i < str.length(); ++i)
-        {
-            ++temp_map[str[i]];
+void solver(vector<string> mylist){
+    
+    map<map<char,int>,vector<string>> mp;
+    
+    for(auto s : mylist){
+        map<char,int> temp;
+        vector<string> tempvec;
+        for(auto x: s){
+            temp[x]++;
         }
-         
-
-        auto it = my_map.find(temp_map);
-        if (it != my_map.end())
-        {
-            it->second.push_back(str);
+        auto itr = mp.find(temp);
+        if(itr!=mp.end()){
+            itr->second.push_back(s);
         }
-        else
-        {
-            temp_my_list.push_back(str);
-            my_map.insert({ temp_map, temp_my_list });
+        else{
+            tempvec.push_back(s);
+            mp.insert({temp,tempvec});
         }
     }
-     
-    // Stores the result in a vector
+    
     vector<vector<string>> result;
  
-    for(auto it = my_map.begin();
-             it != my_map.end(); ++it)
+    for(auto it = mp.begin();
+             it != mp.end(); ++it)
     {
         result.push_back(it->second);
     }
@@ -49,8 +39,7 @@ void solver(vector<string> my_list)
           cout << "]";
     }
 }
- 
-// Driver code
+
 int main()
 {
     vector<string> my_list = { "cat", "dog", "ogd",
