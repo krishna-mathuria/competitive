@@ -3,21 +3,17 @@ class RandomizedSet {
     vector<int> nums;
     unordered_map<int, int> mp;
 public:
-    /** Initialize your data structure here. */
-    RandomizedSet() {
+     RandomizedSet() {
         
     }
-    
-    /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
-    bool insert(int val) {
+     bool insert(int val) {
         if (mp.find(val) != mp.end()) return false;
         nums.emplace_back(val);
         mp[val] = nums.size() - 1;
         return true;
     }
     
-    /** Removes a value from the set. Returns true if the set contained the specified element. */
-    bool remove(int val) {
+   bool remove(int val) {
         if (mp.find(val) == mp.end()) return false;
         int last = nums.back();
         mp[last] = mp[val];
@@ -27,8 +23,7 @@ public:
         return true;
     }
     
-    /** Get a random element from the set. */
-    int getRandom() {
+     int getRandom() {
         return nums[rand() % nums.size()];
     }
 };
